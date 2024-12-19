@@ -1,59 +1,23 @@
-# RandomHandApp
+# Card Generator and Sorter
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This is a simple Angular application that generates a random set of cards, displays them visually as playing cards, and allows sorting based on card values and colors. The app includes enhanced styling and an interactive user interface.
 
-## Development server
+---
 
-To start a local development server, run:
+## **Features**
 
-```bash
-ng serve
-```
+- Generates a random hand of cards (between 1 and 52).
+- Displays cards visually with suit symbols (`♥`, `♦`, `♣`, `♠`) and mapped values (`A`, `2`, ..., `K`).
+- Allows sorting of cards based on value and color.
+- Shows color and value orders visually as smaller cards.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## **Prerequisites**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Make sure you have the following installed on your machine:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. [Node.js](https://nodejs.org/) (v14 or higher)
+2. [Angular CLI](https://angular.io/cli) (v14 or higher)
+   ```bash
+   npm install -g @angular/cli
