@@ -1,0 +1,77 @@
+<div style="text-align: center; margin: 20px;">
+  <h1 style="color: #2c3e50;">Random Hand Generator</h1>
+
+  <!-- Input and Generate Button -->
+  <input
+    type="number"
+    [(ngModel)]="handSize"
+    placeholder="Enter a number between 1 and 52"
+    min="1"
+    max="52"
+    style="padding: 5px; margin: 10px; border-radius: 5px;"
+  />
+  <button
+    (click)="generateHand()"
+    style="background-color: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;"
+  >
+    Generate Random Hand
+  </button>
+
+  <p *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</p>
+
+  <!-- Generated Hand -->
+  <div *ngIf="randomHand.length > 0">
+    <h2 style="color: #27ae60;">Generated Hand:</h2>
+    <div class="card-container">
+      <div
+        *ngFor="let card of randomHand"
+        class="card"
+        [ngStyle]="{ color: getColorStyle(card.color) }"
+      >
+        <div class="card-value">{{ getValue(card.value) }}</div>
+        <div class="card-symbol">{{ getSymbol(card.color) }}</div>
+      </div>
+    </div>
+    <br>
+    <button
+      (click)="sortHand()"
+      style="background-color: #e67e22; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;"
+    >
+      Sort Hand
+    </button>
+  </div>
+  <!-- Sorted Hand -->
+  <div *ngIf="sortedHand.length > 0">
+    <h2 style="color: #e74c3c;">Sorted Hand:</h2>
+    <div class="card-container">
+      <div
+        *ngFor="let card of sortedHand"
+        class="card"
+        [ngStyle]="{ color: getColorStyle(card.color) }"
+      >
+        <div class="card-value">{{ getValue(card.value) }}</div>
+        <div class="card-symbol">{{ getSymbol(card.color) }}</div>
+      </div>
+    </div>
+
+    <!-- Color Order -->
+    <h3 style="margin-top: 20px;">Color Order:</h3>
+    <div class="card-container">
+      <div
+        *ngFor="let color of colorOrder"
+        class="card"
+        [ngStyle]="{ color: getColorStyle(color) }"
+      >
+        <div class="card-symbol">{{ getSymbol(color) }}</div>
+      </div>
+    </div>
+
+    <!-- Value Order -->
+    <h3 style="margin-top: 20px;">Value Order:</h3>
+    <div class="card-container">
+      <div class="card" *ngFor="let value of valueOrder">
+        <div class="card-value">{{ getValue(value) }}</div>
+      </div>
+    </div>
+  </div>
+</div>
